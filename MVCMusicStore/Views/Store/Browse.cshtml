@@ -1,0 +1,19 @@
+﻿
+@model IEnumerable<Song>
+@{
+    Layout = "~/Views/Store/_BrowseStart.cshtml";
+    ViewBag.Title = "Browse";
+}
+@{
+    if(ViewBag.Filter != ""){
+        <h3>Filter: @ViewBag.Filter</h3>
+    }
+}
+<ul class="float-left">
+    @foreach(Song song in Model){
+        <li class="spaced_list">
+            <a href>@song.Title</a><br />
+            @song.SongPath<br />
+        </li>
+    }
+</ul>
