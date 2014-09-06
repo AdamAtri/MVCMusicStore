@@ -50,25 +50,12 @@ namespace MVCMusicStore.Controllers
                     
         }
 
-        public string Details(int id = -999) {
-            return string.Format("Hello from Store.Details({0})", id > 0 ? id.ToString() : "");
+        public ActionResult Details(int id = -999) {
+
+            return View();
         }
 
     }
 }
 
-namespace MVCMusicStoreClasses {
-    public class Song {
-        public string Title { get; set; }
-        public string SongPath { get; set; }
-    }
 
-    public static class StringExtensions {
-
-        public static string CapitalizeFirst(this string original) {
-            string first = original[0].ToString();
-            string result = first.ToUpper() + original.Substring(1);
-            return result;
-        }
-    }
-}

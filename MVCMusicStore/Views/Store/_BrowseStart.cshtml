@@ -1,0 +1,10 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<form >
+    <input id="searchBox" placeholder="Enter a search term" type="search" />
+    <input id="searchSubmit" type="submit" value="Search" />
+</form>
+<div>@RenderBody()</div>
