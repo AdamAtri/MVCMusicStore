@@ -31,7 +31,7 @@ namespace MVCMusicStore.Controllers
             foreach (string s in songPaths) {
                 if (s.Contains(filter.ToLower()) ||
                     s.Contains(filter.ToUpper()) || 
-                    s.Contains(filter.CapitalizeFirst())) {
+                    s.Contains(filter.TitleCase())) {
                     
                     songs.Add(extractSong(s));
                 }

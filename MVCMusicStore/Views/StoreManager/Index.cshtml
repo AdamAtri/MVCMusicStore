@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MVCMusicStore.Models.Album>
+
+@{
+    ViewBag.Title = "Albums";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.ActionLink(@Html.DisplayNameFor(model => model.Title).ToString(), "Index", new { sort = "Title" })
+        </th>
+        <th>
+            @Html.ActionLink(@Html.DisplayNameFor(model => model.Artist.Name).ToString(), "Index", new { sort = "Artist"})
+        </th>
+        <th>
+            @Html.ActionLink(@Html.DisplayNameFor(model => model.Genre.Name).ToString(), "Index", new { sort = "Genre"})
+        </th>
+                <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlbumArtUrl)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artist.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlbumArtUrl)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AlbumID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AlbumID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AlbumID })
+        </td>
+    </tr>
+}
+
+</table>
