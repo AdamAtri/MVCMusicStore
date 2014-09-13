@@ -8,6 +8,8 @@ namespace MVCMusicStore.Controllers
 {
     public class HomeController : Controller
     {
+        MusicStoreDB db = new MusicStoreDB();
+
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to the Music Store";
@@ -31,6 +33,15 @@ namespace MVCMusicStore.Controllers
 
         public ActionResult Sample() {
             return View();
+        }
+
+        public ActionResult Search(string q) {
+            var albums = db.Albums
+                            .Include("Artist")
+                            .Where(a => a.Title.Contains(q))
+                            .Take(10);
+
+            return View(albums.ToList());
         }
     }
 }

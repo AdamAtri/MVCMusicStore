@@ -18,5 +18,14 @@ namespace MVCMusicStoreClasses
             }
             return result.Trim();
         }
+
+        public static string RemoveSpaces(this string original) {
+            string result = "";
+            string[] parts = original.Split(' ');
+            foreach (string part in parts) {
+                result += part;
+            }
+            return result;
+        }
     }
 }

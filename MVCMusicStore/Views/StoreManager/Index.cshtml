@@ -6,26 +6,30 @@
 
 <h2>@ViewBag.Title</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+<h3>Take a Look</h3>
+
+@using (Html.BeginForm("Search", "StoreManager", FormMethod.Get)) { 
+    <input type="text" name="q" />
+    <input type="submit" value="Search" />
+}
 <table>
     <tr>
         <th>
-            @Html.ActionLink(@Html.DisplayNameFor(model => model.Title).ToString(), "Index", new { sort = "Title" })
+            @Html.DisplayNameFor(model => model.Title).ToString()
         </th>
         <th>
-            @Html.ActionLink(@Html.DisplayNameFor(model => model.Artist.Name).ToString(), "Index", new { sort = "Artist"})
+            @Html.DisplayNameFor(model => model.Artist.Name).ToString()
         </th>
         <th>
-            @Html.ActionLink(@Html.DisplayNameFor(model => model.Genre.Name).ToString(), "Index", new { sort = "Genre"})
+            @Html.DisplayNameFor(model => model.Genre.Name).ToString()
         </th>
-                <th>
+        <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.AlbumArtUrl)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -43,9 +47,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Price)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.AlbumArtUrl)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AlbumID }) |
             @Html.ActionLink("Details", "Details", new { id=item.AlbumID }) |

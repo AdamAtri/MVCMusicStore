@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVCMusicStore.Models;
+using MVCMusicStoreClasses;
 
 namespace MVCMusicStore.Controllers
 {
@@ -36,6 +37,17 @@ namespace MVCMusicStore.Controllers
                 }
                 
             return View(albumList);
+        }
+
+        public ActionResult Search(string q) {
+            var albumList = db.Albums
+                                .Include("Artist").Include("Genre")
+                                .Where(a => a.Title.Contains(q) ||
+                                            a.Artist.Name.Contains(q))
+                                .Take(10);
+
+            return View("Index", albumList.ToList());
+
         }
 
         //

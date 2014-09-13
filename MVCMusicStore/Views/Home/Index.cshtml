@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "MVC Music Store";
 }
 @section featured {
     <section class="featured">
@@ -9,17 +9,23 @@
                 <h2>@ViewBag.Message</h2>
             </hgroup>
             <p>
-                To learn more about ASP.NET MVC visit
+                @*To learn more about ASP.NET MVC visit
                 <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
                 The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
                 If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.*@
             </p>
         </div>
     </section>
 }
-<h3>We suggest the following:</h3>
-<ol class="round">
+<h3>Take a Look</h3>
+
+@using (Html.BeginForm("Search", "StoreManager", FormMethod.Get)) { 
+    <input type="text" name="q" />
+    <input type="submit" value="Search" />
+}
+
+@*<ol class="round">
     <li class="one">
         <h5>Getting Started</h5>
         ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
@@ -43,4 +49,4 @@
         <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
     </li>
     
-</ol>
+</ol>*@
