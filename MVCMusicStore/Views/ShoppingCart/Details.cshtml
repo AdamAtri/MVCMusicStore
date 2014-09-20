@@ -1,0 +1,36 @@
+﻿@model MVCMusicStore.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Order</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Customer.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrderTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrderTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Total)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Total)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.OrderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
