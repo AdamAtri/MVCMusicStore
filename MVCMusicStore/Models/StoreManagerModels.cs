@@ -13,7 +13,12 @@ namespace MVCMusicStore.Models
         public virtual int AlbumID { get; set; }
         public virtual int GenreID { get; set; }
         public virtual int ArtistID { get; set; }
+
+        [Required(ErrorMessage="An Album Title is required")]
+        [StringLength(160)]
+        [DataType(DataType.Text)]
         public virtual string Title { get; set; }
+
         public virtual decimal Price { get; set; }
         public virtual string AlbumArtUrl { get; set; }
         public virtual Genre Genre { get; set; }

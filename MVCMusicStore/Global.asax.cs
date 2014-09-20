@@ -19,6 +19,7 @@ namespace MVCMusicStore
         protected void Application_Start()
         {
             Database.SetInitializer(new MusicStoreDBInitializer());
+            Database.SetInitializer(new ShoppingCartDBInitializer());
 
             AreaRegistration.RegisterAllAreas();
 

@@ -21,8 +21,15 @@
 <h3>Take a Look</h3>
 
 @using (Html.BeginForm("Search", "StoreManager", FormMethod.Get)) { 
-    <input type="text" name="q" />
-    <input type="submit" value="Search" />
+    <fieldset>
+        <legend> Search </legend>
+        <p>
+            @Html.Label("Keywords")
+            @Html.TextBox("q")
+        </p>
+    </fieldset>
+    <!--<input type="text" name="q" />
+    <input type="submit" value="Search" />-->
 }
 
 @*<ol class="round">

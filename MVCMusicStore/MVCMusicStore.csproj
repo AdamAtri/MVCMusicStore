@@ -183,9 +183,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Classes\MusicStoreClasses.cs" />
     <Compile Include="Classes\MusicStoreDBInitializer.cs" />
+    <Compile Include="Classes\ShoppingCartDBInitializer.cs" />
     <Compile Include="Classes\StringExtensions.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\StoreManagerController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -193,9 +195,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ShoppingCartModels.cs" />
     <Compile Include="Models\StoreManagerModels.cs" />
     <Compile Include="MusicStoreDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCartDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -318,6 +322,11 @@
     <Content Include="Views\StoreManager\Edit.cshtml" />
     <Content Include="Views\StoreManager\Delete.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Details.cshtml" />
+    <Content Include="Views\ShoppingCart\Create.cshtml" />
+    <Content Include="Views\ShoppingCart\Edit.cshtml" />
+    <Content Include="Views\ShoppingCart\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
